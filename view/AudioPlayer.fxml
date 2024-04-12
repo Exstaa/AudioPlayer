@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to right, #6a9113, #141517);;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.developia.audioplayer.controller.AudioPlayerController">
+   <children>
+      <Label layoutX="252.0" layoutY="56.0" text="Audio Player">
+         <font>
+            <Font name="System Bold" size="49.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.36666667461395264" green="1.0" blue="0.5038889050483704" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.45625841184387617">
+                     <color>
+                        <Color red="0.7384795546531677" green="0.8105263113975525" blue="0.7540896534919739" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.12982456386089325" green="0.7789473533630371" blue="0.14064326882362366" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="audioNameLabel" layoutX="264.0" layoutY="157.0" prefHeight="26.0" prefWidth="295.0" text="default_song.mp3" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="800.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#openMenuItemClicked" text="Open" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Slider fx:id="volumeSlider" blockIncrement="0.01" layoutX="699.0" layoutY="111.0" max="1.0" onMouseDragged="#volumeSliderDragged" orientation="VERTICAL" prefHeight="182.0" prefWidth="26.0" value="0.5" />
+      <Label layoutX="681.0" layoutY="85.0" prefHeight="26.0" prefWidth="62.0" text="Volume" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Slider fx:id="durationChangerSlider" blockIncrement="1.0" layoutX="264.0" layoutY="280.0" prefHeight="26.0" prefWidth="295.0" />
+      <Label fx:id="startDurationLabel" layoutX="216.0" layoutY="280.0" prefHeight="26.0" prefWidth="35.0" text="0:00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="endDurationLabel" layoutX="566.0" layoutY="280.0" prefHeight="26.0" prefWidth="114.0" text="0:00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="playButton" layoutX="326.0" layoutY="317.0" mnemonicParsing="false" onAction="#playButtonClicked" style="-fx-background-color: linear-gradient(to right, #dce35b, #45b649);;" text="Play" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="pauseButton" layoutX="428.0" layoutY="317.0" mnemonicParsing="false" onAction="#pauseButtonClicked" style="-fx-background-color: linear-gradient(to right, #dce35b, #45b649);;" text="Pause" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
